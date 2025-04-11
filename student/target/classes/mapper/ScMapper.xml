@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ex02.student.mapper.ScMapper">
+    <select id="selectScBySno" parameterType="String" resultType="com.ex02.student.po.Sc">
+		select * from sc where sno=#{sno};
+	</select>
+    <select id="selectScBySno1" parameterType="String" resultType="com.ex02.student.po.Sc">
+		select * from sc where sno like concat('%',#{sno},'%');
+	</select>
+    <insert id="insertSc" parameterType="com.ex02.student.po.Sc">
+		insert into sc(sno,cno,tno,participation,final1,total) values(#{sno},#{cno},#{tno},#{participation},#{final1},#{total});
+	</insert>
+    <delete id="deleteSc" parameterType="String">
+		delete from sc where sno=#{sno}
+	</delete>
+    <update id="updateSc" parameterType="com.ex02.student.po.Sc">
+		update sc set cno=#{cno},tno=#{tno},participation=#{participation},final1=#{final1},total=#{total} where sno=#{sno}
+	</update>
+</mapper>
