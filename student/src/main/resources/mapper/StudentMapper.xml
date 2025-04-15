@@ -17,4 +17,53 @@
     <update id="updateStudent" parameterType="com.ex02.student.po.Student">
 		update stu set sname=#{sname},ssex=#{ssex},snative=#{snative},mno=#{mno} where sno=#{sno}
 	</update>
+	<select id="selectStudent" parameterType="Student" resultType="Student">
+		select * from stu
+		<where>
+			<choose>
+				<when test="sno != null and sno != ''">
+					sno = #{sno}
+				</when>
+				<otherwise>
+					<choose>
+						<when test="sname != null and sname != ''">
+							<bind name="search_sname_key" value="'%' + sname + '%'"/>
+							sname like #{search_sname_key}
+						</when>
+						<otherwise>
+							snative is not null
+						</otherwise>
+					</choose>
+				</otherwise>
+			</choose>
+		</where>
+	</select>
+	<select id="selectStudentBySnames" parameterType="List" resultType="Student">
+		select * from stu where sname in
+		<foreach item="sname" index="index" collection="list" open="(" separator="," close=")">
+			#{sname}
+		</foreach>
+	</select>
+
+	<select id="selectStudentScoresBySno" parameterType="String" resultMap="StudentMap">
+		select * from stu c left join sc b on c.sno = b.sno where  c.sno=#{value};
+	</select>
+	<resultMap type="Student" id="StudentMap">
+		<id property="sno" column="sno"/>
+		<result property="sname" column="sname"/>
+		<result property="ssex" column="ssex"/>
+		<result property="snative" column="snative"/>
+		<result property="mno" column="mno"/>
+		<collection property="listScore" ofType="Score">
+			<id property="sno" column="sno"/>
+			<result property="cno" column="cno"/>
+			<result property="tno" column="tno"/>
+			<result property="participation" column="participation"/>
+			<result property="final1" column="final1"/>
+			<result property="total" column="total"/>
+		</collection>
+	</resultMap>
+
+
+
 </mapper>

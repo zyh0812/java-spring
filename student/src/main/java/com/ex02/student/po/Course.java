@@ -4,6 +4,15 @@ public class Course {
     private int cno;
     private String cname;
     private int period;
+    private Book book = null;
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
 
     @Override
     public String toString() {
@@ -11,6 +20,7 @@ public class Course {
                 "cno=" + cno +
                 ", cname='" + cname + '\'' +
                 ", period=" + period +
+                ", book=" + book +
                 '}';
     }
 

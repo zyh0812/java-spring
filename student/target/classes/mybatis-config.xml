@@ -3,6 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties resource="db.properties"/>
+    <typeAliases>    <package name="com.ex02.student.po"/></typeAliases>
     <environments default="mysql_student">
         <environment id="mysql_student">
             <transactionManager type="jdbc" />
@@ -19,5 +20,7 @@
         <mapper resource="mapper/CourseMapper.xml"/>
         <mapper resource="mapper/ScMapper.xml"/>
         <mapper resource="mapper/TeacherMapper.xml"/>
+        <mapper resource="mapper/BookMapper.xml"/>
+        <mapper resource="mapper/ScoreMapper.xml"/>
     </mappers>
 </configuration>

@@ -2,6 +2,8 @@ package com.ex02.student.mapper;
 
 import com.ex02.student.po.Course;
 
+import java.util.List;
+
 
 public interface CourseMapper {
     Course selectCourseByCno(int cno);
@@ -9,4 +11,9 @@ public interface CourseMapper {
     int insertCourse(Course course);
     int deleteCourse(int cno);
     int updateCourse(Course course);
+    List<Course> selectCourseByCnames(List<String> list);
+    Course selectCourseBookByCno(int cno);
+
+    Course selectresultCourseBookByCno(int cno);
+
 }

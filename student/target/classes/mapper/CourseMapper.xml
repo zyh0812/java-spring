@@ -9,7 +9,7 @@
 		select * from course where cname like concat('%',#{cname},'%');
 	</select>
     <insert id="insertCourse" parameterType="com.ex02.student.po.Course">
-		insert into course(cno,cname,period) values(#{cno},#{cname},#{period});
+		insert into cours           e(cno,cname,period) values(#{cno},#{cname},#{period});
 	</insert>
     <delete id="deleteCourse" parameterType="int">
 		delete from course where cno=#{cno}
@@ -17,4 +17,36 @@
     <update id="updateCourse" parameterType="com.ex02.student.po.Course">
 		update course set cname=#{cname},period=#{period} where cno=#{cno}
 	</update>
+	<select id="selectCourseByCnames" parameterType="List" resultType="Course">
+		select * from course where cname in
+		<foreach item="cname" index="index" collection="list" open="(" separator="," close=")">
+			#{cname}
+		</foreach>
+	</select>
+
+
+	<select id="selectCourseBookByCno" parameterType="Integer" resultMap="courseBookMap">
+      select * from course where cno=#{cno};
+   </select>
+	<resultMap type="Course" id="courseBookMap">
+		<id property="cno" column="cno"/>
+		<result property="cname" column="cname"/>
+		<result property="period" column="period"/>
+		<association property="book" column="bookid" javaType="Book" select="com.ex02.student.mapper.BookMapper.selectBookById"/>
+	</resultMap>
+
+	<select id="selectresultCourseBookByCno" parameterType="int" resultMap="Course">
+		select cno,cname,period,b.* from course c left join book b on c.bookid = b.id where  c.cno=#{value};
+	</select>
+	<resultMap id="Course" type="course">
+		<id property="book.id" column="id"/>
+		<result property="book.bname" column="bname"/>
+		<result property="book.price" column="price"/>
+		<result property="book.pub" column="pub"/>
+
+	</resultMap>
+
+
+
+
 </mapper>

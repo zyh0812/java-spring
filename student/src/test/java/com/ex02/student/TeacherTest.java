@@ -17,12 +17,12 @@ public class TeacherTest {
         Teacher teacher = teacherMapper.selectTeacherByTno(1);
         System.out.println(teacher);
 
-        teacher.setTname("杜文哲");
+        teacher.setTname("周宇鸿");
 
         Teacher name = mapper.selectTeacherByTname("袁");
         System.out.println(name);
 
-        int i = mapper.insertTeacher(new Teacher(4,"杜文哲","男","12345678911"));
+        int i = mapper.insertTeacher(new Teacher(4,"周宇鸿","男","1583842214"));
         System.out.println(i);
 
         int j = mapper.updateTeacher(teacher);

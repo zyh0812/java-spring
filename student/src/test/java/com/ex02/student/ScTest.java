@@ -20,7 +20,7 @@ public class ScTest {
         Sc sno = mapper.selectScBySno1("100000002");
         System.out.println(sno);
 
-        int i = mapper.insertSc(new Sc("100000003",3,3,84,78,82));
+        int i = mapper.insertSc(new Sc("100000003",3,3,82,78,82));
         System.out.println(i);
 
         int m = mapper.updateSc(sc);
@@ -31,4 +31,5 @@ public class ScTest {
 
         sqlSession.close();
     }
+
 }

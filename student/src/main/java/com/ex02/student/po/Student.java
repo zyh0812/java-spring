@@ -1,17 +1,42 @@
 package com.ex02.student.po;
 
+import java.util.List;
+
 public class Student {
     private String sno;
     private String sname;
     private String ssex;
     private String snative;
     private int mno;
+    private List<Score> listScore = null;
+
 
     public Student() {
 
     }
 
     // 省略了getter和setter方法
+
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "sno='" + sno + '\'' +
+                ", sname='" + sname + '\'' +
+                ", ssex='" + ssex + '\'' +
+                ", snative='" + snative + '\'' +
+                ", mno=" + mno +
+                ", listScore=" + listScore +
+                '}';
+    }
+
+    public List<Score> getListScore() {
+        return listScore;
+    }
+
+    public void setListScore(List<Score> listScore) {
+        this.listScore = listScore;
+    }
 
     public String getSno() {
         return sno;
@@ -51,17 +76,6 @@ public class Student {
 
     public void setMno(int mno) {
         this.mno = mno;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "sno='" + sno + '\'' +
-                ", sname='" + sname + '\'' +
-                ", ssex='" + ssex + '\'' +
-                ", snative='" + snative + '\'' +
-                ", mno=" + mno +
-                '}';
     }
 
     public Student(String sno, String sname, String ssex, String snative, int mno) {

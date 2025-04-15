@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ex02.student.mapper.ScoreMapper">
+    <select id="selectScoreBySno" parameterType="String" resultMap="selectScoreBySnoMap">
+      select * from sc where sno=#{sno};
+   </select>
+    <resultMap type="Student" id="selectScoreBySnoMap">
+
+        <id property="sno" column="sno"/>
+        <result property="cno" column="cno"/>
+        <result property="tno" column="tno"/>
+        <result property="participation" column="participation"/>
+        <result property="final1" column="final1"/>
+        <result property="total" column="total"/>
+    </resultMap>
+</mapper>

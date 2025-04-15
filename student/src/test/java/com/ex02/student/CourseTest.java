@@ -4,6 +4,10 @@ import com.ex02.student.po.Course;
 import com.ex02.student.utils.StudentDBUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class CourseTest {
     @Test
     public void studentTest(){
@@ -17,12 +21,12 @@ public class CourseTest {
         Course course = courseMapper.selectCourseByCno(1);
         System.out.println(course);
 
-        course.setCname("杜文哲");
+        course.setCname("周宇鸿");
 
         Course name = mapper.selectCourseByCname("高等数学");
         System.out.println(name);
 
-        int insert = mapper.insertCourse(new Course(5,"商务英语",80));
+        int insert = mapper.insertCourse(new Course(5,"软件工程",80));
         System.out.println(insert);
 
         int update = mapper.updateCourse(course);
@@ -34,4 +38,38 @@ public class CourseTest {
 
         sqlSession.close();
     }
+    @Test
+    public void selectCourseByCnames(){
+        System.out.println("selectCourseByCnamesTest");
+        SqlSession sqlSession = StudentDBUtil.getSession();
+        CourseMapper courseMapper = sqlSession.getMapper(CourseMapper.class);
+        List<String> list = new ArrayList<String>();
+        list.add("高等数学");
+        list.add("大学英语");
+        list.add("数据库原理与应用");
+        list.add("数据结构");
+        List<Course> courseList = courseMapper.selectCourseByCnames(list);
+        for (Course course : courseList)
+            System.out.println(course);
+    }
+
+    @Test
+    public void courseBookTest(){
+        System.out.println("courseTest：");
+        SqlSession sqlSession = StudentDBUtil.getSession();
+        CourseMapper courseMapper = sqlSession.getMapper(CourseMapper.class);
+        Course course = courseMapper.selectCourseBookByCno(1);
+        System.out.println(course);
+    }
+
+    @Test
+    public void courseresultBookTest(){
+        SqlSession sqlSession = StudentDBUtil.getSession();
+        CourseMapper courseMapper = sqlSession.getMapper(CourseMapper.class);
+        Course course = courseMapper.selectresultCourseBookByCno(1);
+        System.out.println(course);
+    }
+
+
+
 }
