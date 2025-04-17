@@ -5,18 +5,11 @@ import java.util.List;
 public class Student {
     private String sno;
     private String sname;
-    private String ssex;
+    private String ssex ;
     private String snative;
     private int mno;
     private List<Score> listScore = null;
-
-
-    public Student() {
-
-    }
-
-    // 省略了getter和setter方法
-
+    private List<Course> courseList = null;
 
     @Override
     public String toString() {
@@ -27,8 +20,24 @@ public class Student {
                 ", snative='" + snative + '\'' +
                 ", mno=" + mno +
                 ", listScore=" + listScore +
+                ", courseList=" + courseList +
                 '}';
     }
+
+    public List<Course> getCourseList() {
+        return courseList;
+    }
+
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
+    }
+
+    public Student() {
+
+    }
+
+    // 省略了getter和setter方法
+
 
     public List<Score> getListScore() {
         return listScore;

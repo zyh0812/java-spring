@@ -46,6 +46,23 @@
 
 	</resultMap>
 
+	<select id="selectCourseStudentsByCno" parameterType="Integer" resultMap="courseStudentMap">
+   			select * from stu t inner join sc  on t.sno = sc.sno inner join course c on c.cno = sc.cno where c.cno =#{value};
+	</select>
+	<resultMap type="Course" id="courseStudentMap">
+		<id property="cno" column="cno"/>
+		<result property="cname" column="cname"/>
+		<result property="period" column="period"/>
+		<collection property="studentList" ofType="Student">
+			<id property="sno" column="sno"/>
+			<result property="sname" column="sname"/>
+			<result property="ssex" column="ssex"/>
+			<result property="snative" column="snative"/>
+			<result property="mno" column="mno"/>
+		</collection>
+	</resultMap>
+
+
 
 
 

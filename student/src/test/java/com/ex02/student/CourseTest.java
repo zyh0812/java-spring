@@ -71,5 +71,13 @@ public class CourseTest {
     }
 
 
-
+    @Test
+    public void courseStudentTest(){
+        System.out.println("courseStudentTest：");
+        SqlSession sqlSession = StudentDBUtil.getSession();
+        CourseMapper courseMapper = sqlSession.getMapper(CourseMapper.class);
+        Course course = courseMapper.selectCourseStudentsByCno(1);
+        System.out.println(course);
+    }
 }
+

@@ -1,17 +1,19 @@
 package com.ex02.student.po;
 
+import java.util.List;
+
 public class Course {
     private int cno;
     private String cname;
     private int period;
     private Book book = null;
+    private List<Student> studentList =null;
 
-    public Book getBook() {
-        return book;
+    public Course() {
     }
 
-    public void setBook(Book book) {
-        this.book = book;
+    public List<Student> getStudentList() {
+        return studentList;
     }
 
     @Override
@@ -21,7 +23,20 @@ public class Course {
                 ", cname='" + cname + '\'' +
                 ", period=" + period +
                 ", book=" + book +
+                ", studentList=" + studentList +
                 '}';
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
     }
 
     public int getCno() {

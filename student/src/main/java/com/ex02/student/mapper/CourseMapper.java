@@ -16,4 +16,5 @@ public interface CourseMapper {
 
     Course selectresultCourseBookByCno(int cno);
 
+    Course selectCourseStudentsByCno(int cno);
 }
