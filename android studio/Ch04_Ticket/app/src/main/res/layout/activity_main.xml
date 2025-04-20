@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择票种"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radio_adult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全票"/>
+
+        <RadioButton
+            android:id="@+id/radio_child"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="半票"/>
+
+        <RadioButton
+            android:id="@+id/radio_senior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="敬老票"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确认选择"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>
