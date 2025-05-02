@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="cb_buger" type="id" />
+    <item name="cb_cola" type="id" />
+    <item name="cb_fries" type="id" />
+    <item name="cb_corn_juice" type="id" />
+    <item name="btn_order" type="id" />
+    <item name="tv_result" type="id" />
+    <item name="cb_burger" type="id" />
+</resources>

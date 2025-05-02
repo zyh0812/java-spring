@@ -3,8 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/soft/IdeaProjects/Ch04_TempConversion/app/src/main/res/layout/activity_food_menu.xml" value="0.2916666666666667" />
-        <entry key="..\:/soft/IdeaProjects/Ch04_TempConversion/app/src/main/res/layout/activity_main.xml" value="0.2916666666666667" />
+        <entry key="..\:/soft/IdeaProjects/FoodMenu/app/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>
     </option>
   </component>
@@ -13,5 +12,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.27708333333333335" />
+      </ProjectState>
+    </option>
   </component>
 </project>

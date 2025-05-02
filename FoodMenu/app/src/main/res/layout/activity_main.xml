@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请选择您的餐点："
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <CheckBox
+        android:id="@+id/cb_burger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="汉堡"/>
+    <CheckBox
+        android:id="@+id/cb_fries"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="薯条"/>
+    <CheckBox
+        android:id="@+id/cb_cola"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="可乐"/>
+    <CheckBox
+        android:id="@+id/cb_corn_juice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="玉米汁"/>
+
+    <Button
+        android:id="@+id/btn_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="订购"/>
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="您点的餐点是："
+        android:textSize="16sp"/>
+
+</LinearLayout>
